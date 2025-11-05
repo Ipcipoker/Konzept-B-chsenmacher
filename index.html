@@ -388,4 +388,16 @@
         });
     </script>
 </body>
+    <audio id="bgm" autoplay loop muted>
+  <source src="https://github.com/Ipcipoker/Konzept-B-chsenmacher/raw/refs/heads/main/Oceans%20(Spirit%20Lead%20Me)%20-%20Hillsong%20Worship%20-%20Guitar%20Cover.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+   // nach 1 Sekunde versuchen Audio zu entmuten
+   setTimeout(() => {
+     const audio = document.getElementById('bgm');
+     if (audio) audio.muted = false;
+   }, 1000);
+</script>
+
 </html>
