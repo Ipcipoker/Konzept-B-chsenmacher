@@ -29,17 +29,6 @@
             overflow-x: hidden;
             line-height: 1.6;
         }
-
-        /* BUTTON STYLE */
-        #music-btn{
-            position: fixed; bottom: 25px; right: 25px;
-            background: rgba(20,20,20,0.8); border: 2px solid var(--primary);
-            padding: 10px 14px; border-radius: 6px; color: var(--primary);
-            font-family: 'Cinzel', serif; cursor: pointer; z-index: 9999; transition: .2s;
-        }
-        #music-btn:hover{ background: rgba(139,0,0,0.4); }
-
-        /* REST DEIN CSS UNVERÄNDERT ↓ */
         
         .presentation-container {
             max-width: 1200px;
@@ -86,8 +75,8 @@
             letter-spacing: 3px;
             text-transform: uppercase;
         }
-        
-        h2 {
+
+                h2 {
             font-family: 'Cinzel', serif;
             color: var(--primary);
             font-size: 2rem;
@@ -234,47 +223,216 @@
     </style>
 </head>
 <body>
+    <div class="nav-container">
+        <div class="nav-dot active" onclick="scrollToSlide(0)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(1)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(2)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(3)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(4)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(5)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(6)"></div>
+    </div>
 
-<!-- 🔊 AUDIO -->
-<audio id="bgm" autoplay loop muted>
-    <source src="https://github.com/Ipcipoker/Konzept-B-chsenmacher/raw/refs/heads/main/Oceans%20(Spirit%20Lead%20Me)%20-%20Hillsong%20Worship%20-%20Guitar%20Cover.mp3" type="audio/mpeg">
-</audio>
+    <div class="presentation-container">
+        <div class="slide">
+            <h1>EL HIERRO DEL OESTE</h1>
+            <div class="subtitle">"Das Eisen des Westens"</div>
+            <p style="text-align: center; font-size: 1.2rem;">Büchsenmacher & Waffenschmiede - Blackwater</p>
+        </div>
 
-<div id="music-btn" onclick="toggleMusic()">⦿ Musik</div>
+        <div class="slide">
+            <h2>1. Einleitung</h2>
+            <p>Inmitten des rauen und unvorhersehbaren Lebens im Wilden Westen haben die Menschen stets ein Bedürfnis nach zuverlässigen und langlebigen Waffen. Egal, ob für den täglichen Schutz, das Jagdglück oder die Durchsetzung von Gerechtigkeit, Waffen spielen eine zentrale Rolle im Leben der Siedler, Gesetzeshüter und Abenteurer.</p>
+            
+            <p>El Hierro del Oeste wird diesem Bedürfnis gerecht und bietet handgefertigte Waffen, Reparaturdienstleistungen und Individualisierungen für Feuerwaffen an. Mit einer hohen Kunstfertigkeit und einem tiefen Verständnis für die verschiedenen Bedürfnisse der Westler wird das Geschäft zu einer festen Instanz in der Region.</p>
+            
+            <div class="highlight">
+                "In einer Welt voller Ungewissheit ist eine zuverlässige Waffe mehr als nur ein Werkzeug - sie ist ein Lebensretter."
+            </div>
+        </div>
 
-<script>
-const bgm = document.getElementById('bgm');
+        <div class="slide">
+            <h2>2. Zielsetzung</h2>
+            <p>Das Ziel von El Hierro del Oeste ist es, nicht nur ein Geschäft, sondern ein Zentrum für all jene zu schaffen, die Wert auf Qualität und Zuverlässigkeit legen. Durch exzellente Handwerkskunst und massgeschneiderte Lösungen wird das Geschäft zu einem unersetzlichen Partner für alle, die Feuerwaffen besitzen oder erwerben möchten.</p>
+            
+            <ul>
+                <li>Etablierung als führender Büchsenmacher in der Region</li>
+                <li>Bereitstellung von erstklassigen, handgefertigten Waffen</li>
+                <li>Schneller und zuverlässiger Reparaturservice</li>
+                <li>Individuelle Anpassungen nach Kundenwünschen</li>
+                <li>Aufbau langfristiger Kundenbeziehungen durch Vertrauen und Qualität</li>
+            </ul>
+        </div>
 
-// versuchen nach kurzer Zeit zu entmuten
-setTimeout(() => {
-    bgm.muted = false;
-    bgm.play().catch(()=>{});
-}, 800);
+        <div class="slide">
+            <h2>3. Dienstleistungen</h2>
+            <p>El Hierro del Oeste bietet ein umfassendes Sortiment an Dienstleistungen rund um Feuerwaffen an, von der Reparatur bis hin zu maßgeschneiderten Einzelstücken.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>3.1 Waffenreparatur</h3>
+                    <p>Die Reparatur von Feuerwaffen stellt einen wesentlichen Teil des Geschäfts dar. Ob es sich um eine kleine Reparatur oder die Wiederherstellung einer alten Waffe handelt, hier wird jeder Auftrag mit höchster Präzision und Liebe zum Detail ausgeführt.</p>
+                    <ul>
+                        <li>Reparatur von Gewehren, Revolvern und Pistolen</li>
+                        <li>Behebung von Defekten an Abzügen, Mündungen, Läufen oder Zündsystemen</li>
+                        <li>Wiederherstellung von antiken oder beschädigten Waffen</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>3.2 Massgeschneiderte Waffen</h3>
+                    <p>Ein einzigartiger Service für Kunden, die etwas ganz Persönliches suchen: Massanfertigungen für Waffen nach speziellen Vorgaben. Diese individuellen Designs sorgen für Waffen, die nicht nur funktional, sondern auch zu einem Ausdruck der Persönlichkeit des Besitzers werden.</p>
+                    <ul>
+                        <li>Anpassung von Griffen, Laufmodifikationen, Gravuren und Veredelungen</li>
+                        <li>Jagdwaffen und Feuerwaffen für verschiedene Einsatzmöglichkeiten</li>
+                        <li>Beratung zur optimalen Waffenwahl basierend auf Einsatzgebiet</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>3.3 Zubehör & Pflegeprodukte</h3>
+                    <p>Der Verkauf von Zubehör wie Holstern, Munitionskassetten und Pflegekits ergänzt das Sortiment. Auf Wunsch kann auch spezielles Zubehör für Waffen nach den Bedürfnissen des Kunden gefertigt werden.</p>
+                    <ul>
+                        <li>Holster, Lederaccessoires und Waffentaschen</li>
+                        <li>Reinigungssets und Pflegeprodukte für Waffen</li>
+                        <li>Munition, speziell auf die Waffe des Kunden angepasst</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Standort -->
+        <div class="slide">
+            <h2>4. Der Standort</h2>
+            <h3>Ort: Blackwater</h3>
+            <p>Der Standort von El Hierro del Oeste wird sorgfältig gewählt, um sowohl Laufkundschaft als auch gezielte Bestellungen von ausserhalb zu gewinnen. Ein gut erreichbarer Ort, nahe eines Handelszentrums und an einer stark frequentierten Strasse, garantiert einen stetigen Zustrom an Kunden.</p>
+            
+            <div class="highlight">
+                Blackwater als aufstrebende Stadt bietet das perfekte Umfeld für ein Fachgeschäft wie El Hierro del Oeste. Die wachsende Bevölkerung und die zentrale Lage machen es zum idealen Standort für das Unternehmen.
+            </div>
+        </div>
 
-function toggleMusic(){
-    if (bgm.paused){ bgm.muted=false; bgm.play(); }
-    else{ bgm.pause(); }
-}
-</script>
+        <!-- Zukunftsperspektiven -->
+        <div class="slide">
+            <h2>5. Zukunftsperspektiven</h2>
+            <p>In der Zukunft soll El Hierro del Oeste weiter wachsen und sich als zuverlässige Anlaufstelle für Waffenliebhaber und Abenteurer etablieren.</p>
+            
+            <ul>
+                <li>Erweiterung des Dienstleistungsangebots um spezielle Waffen, deren Baupläne in unserem Besitz sind</li>
+                <li>Einführung von Waffenpatentierungen für einzigartige Designs</li>
+                <li>Ausbau der Geschäftsaktivitäten, um noch mehr Spieler in der Region zu erreichen</li>
+                <li>Mögliche Eröffnung weiterer Standorte in anderen Städten</li>
+                <li>Zusammenarbeit mit lokalen Jägern und Gesetzeshütern</li>
+            </ul>
+        </div>
 
+        <!-- Fazit & Kontakt -->
+        <div class="slide">
+            <h2>6. Fazit</h2>
+            <p>El Hierro del Oeste stellt sicher, dass Waffen nicht nur funktional sind, sondern auch einen hohen ästhetischen und praktischen Wert für die Besitzer haben. Mit einem klaren Fokus auf Handwerkskunst, Kundenzufriedenheit und einer lebendigen Integration in das Roleplay-Umfeld bietet das Konzept eine spannende Erweiterung für den Scarlet Horizon RP-Server.</p>
+            
+            <p>Durch die Kombination aus Expertise, massgeschneiderten Dienstleistungen und einer engen Beziehung zur Community wird dieses Konzept einen wichtigen Beitrag zu den interaktiven und immersiven Erfahrungen des Servers leisten.</p>
+            
+            <div class="highlight">
+                Ich freue mich auf eure Rückmeldungen und darauf, das Konzept in die Tat umzusetzen.
+            </div>
+            
+            <div class="signature">
+                <p><strong>Tezak</strong></p>
+                <p>Ingame-Name: Eduardo Dominguez</p>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Kontakt</h3>
+                <p>Ihr wisst wo ihr mich findet</p>
+            </div>
+            
+            <div class="footer">
+                Eingereicht an das Team von Scarlet Horizon | Konzept für die Büchsenmacher-Erlaubnis
+            </div>
+        </div>
+    </div> <!-- /presentation-container -->
 
-<!-- AB HIER REST DEIN INHALT (unchanged) -->
+    <!-- 🔊 Musik-Player + Button -->
+    <audio id="bgm" preload="auto" autoplay loop muted crossorigin>
+      <source src="https://raw.githubusercontent.com/Ipcipoker/Konzept-B-chsenmacher/main/Oceans%20(Spirit%20Lead%20Me)%20-%20Hillsong%20Worship%20-%20Guitar%20Cover.mp3" type="audio/mpeg">
+    </audio>
 
-<div class="nav-container">
-    <div class="nav-dot active" onclick="scrollToSlide(0)"></div>
-    <div class="nav-dot" onclick="scrollToSlide(1)"></div>
-    <div class="nav-dot" onclick="scrollToSlide(2)"></div>
-    <div class="nav-dot" onclick="scrollToSlide(3)"></div>
-    <div class="nav-dot" onclick="scrollToSlide(4)"></div>
-    <div class="nav-dot" onclick="scrollToSlide(5)"></div>
-    <div class="nav-dot" onclick="scrollToSlide(6)"></div>
-</div>
+    <style>
+      #music-btn{
+        position: fixed; bottom: 24px; right: 24px;
+        background: rgba(20,20,20,0.85);
+        border: 2px solid var(--primary);
+        padding: 10px 14px; border-radius: 6px;
+        color: var(--primary); font-family: 'Cinzel', serif;
+        cursor: pointer; z-index: 1000; transition: .2s;
+      }
+      #music-btn:hover{ background: rgba(139,0,0,0.4); }
+    </style>
+    <button id="music-btn" type="button">⦿ Musik: Aus</button>
 
+    <!-- Skripte: Navigation + Musik -->
+    <script>
+        // --- Slides Navigation ---
+        function scrollToSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            slides[index]?.scrollIntoView({ behavior: 'smooth' });
+            updateNavDots(index);
+        }
 
+        function updateNavDots(activeIndex) {
+            const dots = document.querySelectorAll('.nav-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+            });
+        }
 
-<!-- *** und dann kommt der Rest deiner Slides darunter (den lässt du so wie du ihn hattest) -->
-<!-- *** ich breche hier ab, weil dein restlicher Text unverändert ist -->
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(document.querySelectorAll('.slide')).indexOf(entry.target);
+                    updateNavDots(index);
+                }
+            });
+        }, { threshold: 0.5 });
 
+        document.querySelectorAll('.slide').forEach(slide => observer.observe(slide));
+
+        // --- Musiksteuerung ---
+        const bgm = document.getElementById('bgm');
+        const musicBtn = document.getElementById('music-btn');
+        function setBtnLabel(){ musicBtn.textContent = bgm.paused ? '⦿ Musik: Aus' : '⦿ Musik: An'; }
+
+        // Button toggelt Play/Pause
+        musicBtn.addEventListener('click', async () => {
+            try {
+                if (bgm.paused) { bgm.muted = false; await bgm.play(); }
+                else { bgm.pause(); }
+            } catch(e) {}
+            setBtnLabel();
+        });
+
+        // Autoplay-Policy: beim ersten User-Event versuchen zu starten
+        const tryUnmuteOnce = async () => {
+            document.removeEventListener('click', tryUnmuteOnce);
+            document.removeEventListener('keydown', tryUnmuteOnce);
+            document.removeEventListener('wheel', tryUnmuteOnce);
+            try { bgm.muted = false; await bgm.play(); } catch(e) {}
+            setBtnLabel();
+        };
+        document.addEventListener('click', tryUnmuteOnce, { once: true });
+        document.addEventListener('keydown', tryUnmuteOnce, { once: true });
+        document.addEventListener('wheel', tryUnmuteOnce, { once: true });
+
+        // nach kurzer Zeit auch automatisch probieren (falls Browser es zulässt)
+        setTimeout(async () => { 
+            try { bgm.muted = false; await bgm.play(); } catch(e) {}
+            setBtnLabel();
+        }, 800);
+
+        // initialer Label-Text
+        setBtnLabel();
+    </script>
 
 </body>
 </html>
+
